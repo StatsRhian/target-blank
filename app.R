@@ -1,8 +1,9 @@
 library(shiny)
+library(shinyjs)
 
 ui = fluidPage(
     tags$head(
-        shinyjs::useShinyjs(),
+        useShinyjs(),
         tags$script(type = "text/javascript", src = "target-blank.js")
     ),
     tabsetPanel(type = "tabs",
@@ -10,13 +11,13 @@ ui = fluidPage(
                          h1("HTML"),
                          HTML("<a href = 'https://en.wikipedia.org/wiki/HTML'>A HTML link</a>"),
                          h2("Markdown"),
-                         shiny::uiOutput("markdown1")
+                         uiOutput("markdown1")
                          ),
                 tabPanel("Page 2",
                          h1("HTML"),
                          HTML("<a href = 'https://en.wikipedia.org/wiki/HTML'>Another HTML link</a>"),
                          h2("Markdown"),
-                         shiny::uiOutput("markdown2"))
+                         uiOutput("markdown2"))
     )
 )
 
